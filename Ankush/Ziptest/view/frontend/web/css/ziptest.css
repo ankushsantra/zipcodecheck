@@ -1,0 +1,22 @@
+.zip-code-check .form-control .zipcodeInput-error {
+    display: none;
+}
+.zip-code-check form {
+    display: table;
+}
+.zip-code-check .form-control .control {
+    width: 69%;
+    float: left;
+}
+.zip-code-check .form-control .actions {
+    width: 29%;
+    display: table-cell;
+    vertical-align: top;
+    float: left;
+}
+.zip-code-check .msg{
+    margin-top: 10px;
+}
+.zip-code-check .msg .message{
+    padding-bottom: 2px;
+}

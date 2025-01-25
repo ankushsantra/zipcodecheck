@@ -1,0 +1,26 @@
+<div class="zip-code-check">
+    <p class="checker-msg"><?= $block->getBlockTitle() ?></p>
+    <form action="" method="post" id="ziptest-form" data-mage-init='{"validation": {}}'>
+        <div class="form-control">
+            <div class="control">
+                <input type="number" data-validate="{'required':true}" placeholder="<?= __("Zipcode") ?>" class="input-text" name="zipcodeInput" id="zipcodeInput"/>
+                <div id="zipcodeInput-error" class="mage-error zipcodeInput-error"><?= __("This is a required field.") ?></div>
+            </div>
+            <div class="actions">
+                <button type="submit" id="sendZipButton" class="action-primary" name="submit">
+                    <span><?= __("CHECK") ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="msg" id="zipcode_return_data"></div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "ziptest": {
+                "ajaxUrl": "<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+            }
+        }
+    }
+</script>

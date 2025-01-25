@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ankush_Ziptest::ziptest" title="Ziptest" module="Ankush_Ziptest" sortOrder="51" resource="Ankush_Ziptest::ziptest"  parent="Magento_Backend::stores"/>
+        <add id="Ankush_Ziptest::zipcodes" title="Zipcode List" translate="title" module="Ankush_Ziptest" sortOrder="30" parent="Ankush_Ziptest::ziptest" action="ankush/ziptest/" resource="Ankush_Ziptest::ziptest_ziptest"/>
+    </menu>
+</config>
