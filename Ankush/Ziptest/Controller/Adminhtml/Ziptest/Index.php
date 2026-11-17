@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Controller\Adminhtml\ziptest;
 
+/**
+ * Zipcode Index Class
+ */
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
@@ -16,7 +25,7 @@ class Index extends Action
     /**
      * Constructor
      *
-     * @param Context $context
+     * @param Context     $context
      * @param PageFactory $rawFactory
      */
     public function __construct(

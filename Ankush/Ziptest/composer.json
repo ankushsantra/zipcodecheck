@@ -1,0 +1,21 @@
+{
+    "name": "ankush/ziptest",
+    "description": "Ankush Ziptest Module",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "proprietary"
+    ],
+    "require": {
+        "php": "^8.1 || ^8.2 || ^8.3",
+        "magento/framework": "^103.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ankush\\Ziptest\\": ""
+        }
+    }
+}

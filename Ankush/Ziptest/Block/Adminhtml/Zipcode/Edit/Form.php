@@ -1,22 +1,27 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Block\Adminhtml\Zipcode\Edit;
 
+/**
+ * Zipcode Form Class
+ */
 class Form extends \Magento\Backend\Block\Widget\Form\Generic
 {
 
     /**
-     * @var
-     */
-    protected $_systemStore;
-
-    /**
      * Form constructor.
+     *
      * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Framework\Data\FormFactory $formFactory
-     * @param \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig
-     * @param array $data
+     * @param \Magento\Framework\Registry             $registry
+     * @param \Magento\Framework\Data\FormFactory     $formFactory
+     * @param \Magento\Cms\Model\Wysiwyg\Config       $wysiwygConfig
+     * @param array                                   $data
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
@@ -24,8 +29,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         \Magento\Framework\Data\FormFactory $formFactory,
         \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
         array $data = []
-    )
-    {
+    ) {
         $this->_wysiwygConfig = $wysiwygConfig;
         parent::__construct($context, $registry, $formFactory, $data);
     }
@@ -37,13 +41,32 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
     protected function _prepareForm()
     {
         $model = $this->_coreRegistry->registry('row_data');
-        $form = $this->_formFactory->create(['data' => ['id' => 'edit_form', 'enctype' => 'multipart/form-data', 'action' => $this->getData('action'), 'method' => 'post']]);
+        $form = $this->_formFactory->create(
+            [
+            'data' => [
+                'id' => 'edit_form',
+                'enctype' => 'multipart/form-data',
+                'action' => $this->getData('action'),
+                'method' => 'post'
+            ]
+            ]
+        );
         $form->setHtmlIdPrefix('ankush_ziptest_');
         if ($model) {
-            $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Zipcode Details'), 'class' => 'fieldset-wide']);
+            $fieldset = $form->addFieldset(
+                'base_fieldset', [
+                'legend' => __('Zipcode Details'),
+                'class' => 'fieldset-wide'
+                ]
+            );
             $fieldset->addField('id', 'hidden', ['name' => 'id']);
         } else {
-            $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Zipcode Details'), 'class' => 'fieldset-wide']);
+            $fieldset = $form->addFieldset(
+                'base_fieldset', [
+                'legend' => __('Zipcode Details'),
+                'class' => 'fieldset-wide'
+                ]
+            );
         }
 
         $fieldset->addField(

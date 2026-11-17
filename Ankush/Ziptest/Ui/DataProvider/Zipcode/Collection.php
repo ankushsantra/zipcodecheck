@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Ui\DataProvider\Zipcode;
 
+/**
+ * Zipcode Collection Class
+ */
 use Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult;
 
 class Collection extends SearchResult

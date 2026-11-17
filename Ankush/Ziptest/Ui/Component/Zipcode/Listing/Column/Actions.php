@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Ui\Component\Zipcode\Listing\Column;
 
+/**
+ * Zipcode Actions Class
+ */
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
@@ -15,11 +24,11 @@ class Actions extends Column
     protected $urlBuilder;
 
     /**
-     * @param ContextInterface $context
+     * @param ContextInterface   $context
      * @param UiComponentFactory $uiComponentFactory
-     * @param UrlInterface $urlBuilder
-     * @param array $components
-     * @param array $data
+     * @param UrlInterface       $urlBuilder
+     * @param array              $components
+     * @param array              $data
      */
     public function __construct(
         ContextInterface $context,
@@ -35,7 +44,7 @@ class Actions extends Column
     /**
      * Prepare Data Source
      *
-     * @param array $dataSource
+     * @param  array $dataSource
      * @return array
      */
     public function prepareDataSource(array $dataSource)

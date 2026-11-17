@@ -1,8 +1,19 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Model;
 
-class Zipcode extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
+/**
+ * Zipcode Zipcode Class
+ */
+class Zipcode extends
+    \Magento\Framework\Model\AbstractModel implements
+    \Magento\Framework\DataObject\IdentityInterface
 {
     /**
      *

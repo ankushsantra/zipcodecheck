@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Controller\Adminhtml\ziptest;
 
+/**
+ * Zipcode Edit Class
+ */
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\Page;
@@ -27,9 +36,10 @@ class Edit extends Action
 
     /**
      * Edit constructor.
-     * @param Context $context
-     * @param PageFactory $rawFactory
-     * @param ZipcodeFactory $_zipcodeFactory
+     *
+     * @param Context                     $context
+     * @param PageFactory                 $rawFactory
+     * @param ZipcodeFactory              $_zipcodeFactory
      * @param \Magento\Framework\Registry $coreRegistry
      */
     public function __construct(
@@ -37,8 +47,7 @@ class Edit extends Action
         PageFactory $rawFactory,
         ZipcodeFactory $_zipcodeFactory,
         \Magento\Framework\Registry $coreRegistry
-    )
-    {
+    ) {
         $this->pageFactory = $rawFactory;
         $this->_zipcodeFactory = $_zipcodeFactory;
         $this->coreRegistry = $coreRegistry;

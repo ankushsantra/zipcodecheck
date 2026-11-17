@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Controller\Index;
 
+/**
+ * Zipcode Index Class
+ */
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
@@ -22,8 +31,7 @@ class Index extends Action
         Context $context,
         ResultFactory $resultFactory,
         ZipcodeFactory $_zipcodeFactory
-    )
-    {
+    ) {
         $this->resultFactory = $resultFactory;
         $this->_zipcodeFactory = $_zipcodeFactory;
         parent::__construct($context);
@@ -33,9 +41,14 @@ class Index extends Action
     {
         try {
             $zipcode = $this->getRequest()->getParam('zipcode');
-            $rowCollection = $this->_zipcodeFactory->create()->getCollection()->addFieldToFilter('zipcode_id', array(
-                'eq' => $zipcode
-            ));
+            $rowCollection = $this->_zipcodeFactory
+                ->create()
+                ->getCollection()
+                ->addFieldToFilter(
+                    'zipcode_id', array(
+                    'eq' => $zipcode
+                    )
+                );
             $getCollection['status'] = 0;
             foreach ($rowCollection as $item) {
                 $getCollection['status'] = $item->getStatus();
@@ -53,7 +66,9 @@ class Index extends Action
                     $response['cod_type'] = 'error';
                 }
             } else {
-                $response['ship_text'] = __('Delivery is not available in your area.');
+                $response['ship_text'] = __(
+                    'Delivery is not available in your area.'
+                );
                 $response['ship_type'] = 'error';
             }
 

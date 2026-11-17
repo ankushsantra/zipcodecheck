@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Controller\Adminhtml\ziptest;
 
+/**
+ * Zipcode Save Class
+ */
 class Save extends \Magento\Backend\App\Action
 {
     /**
@@ -11,13 +20,13 @@ class Save extends \Magento\Backend\App\Action
 
     /**
      * Save constructor.
+     *
      * @param \Magento\Backend\App\Action\Context $context
      */
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Ankush\Ziptest\Model\ZipcodeFactory $_zipcodeFactory
-    )
-    {
+    ) {
         $this->_zipcodeFactory = $_zipcodeFactory;
         parent::__construct($context);
     }
@@ -37,7 +46,11 @@ class Save extends \Magento\Backend\App\Action
             }
             $rowData->setData($data);
             $rowData->save();
-            $this->messageManager->addSuccess(__('Row data has been successfully saved.'));
+            $this->messageManager->addSuccess(
+                __(
+                    'Row data has been successfully saved.'
+                )
+            );
         } catch (\Exception $e) {
             $this->messageManager->addError(__($e->getMessage()));
         }

@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Controller\Adminhtml\ziptest;
 
+/**
+ * Zipcode MassDelete Class
+ */
 use Ankush\Ziptest\Model\ZipcodeFactory;
 
 class MassDelete extends \Magento\Backend\App\Action
@@ -14,8 +23,7 @@ class MassDelete extends \Magento\Backend\App\Action
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         ZipcodeFactory $_zipcodeFactory
-    )
-    {
+    ) {
         $this->_zipcodeFactory = $_zipcodeFactory;
         parent::__construct($context);
     }
@@ -43,7 +51,11 @@ class MassDelete extends \Magento\Backend\App\Action
                 $deleteData = $this->_zipcodeFactory->create()->load($selectedId);
                 $deleteData->delete();
             }
-            $this->messageManager->addSuccess(__('Row data has been successfully deleted.'));
+            $this->messageManager->addSuccess(
+                __(
+                    'Row data has been successfully deleted.'
+                )
+            );
         } catch (\Exception $e) {
             $this->messageManager->addError(__($e->getMessage()));
         }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="ankush_ziptest"
+           resource="default"
+           engine="innodb"
+           comment="Ankush Ziptest Table">
+
+        <column xsi:type="int"
+                name="id"
+                padding="10"
+                unsigned="true"
+                nullable="false"
+                identity="true"
+                comment="ID"/>
+
+        <column xsi:type="text"
+                name="zipcode_id"
+                nullable="false"
+                comment="Zipcode ID"/>
+
+        <column xsi:type="text"
+                name="ship_info"
+                nullable="false"
+                comment="Ship Info"/>
+
+        <column xsi:type="smallint"
+                name="cod"
+                unsigned="false"
+                nullable="false"
+                default="0"
+                comment="COD"/>
+
+        <column xsi:type="smallint"
+                name="status"
+                unsigned="false"
+                nullable="false"
+                default="0"
+                comment="Status"/>
+
+        <column xsi:type="timestamp"
+                name="created_at"
+                nullable="false"
+                default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+
+        <column xsi:type="timestamp"
+                name="updated_at"
+                nullable="false"
+                default="CURRENT_TIMESTAMP"
+                on_update="true"
+                comment="Updated At"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+    </table>
+
+</schema>

@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Block\Adminhtml\Zipcode;
 
+/**
+ * Zipcode Edit Class
+ */
 class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
     /**
@@ -9,16 +18,19 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
      *
      * @var \Magento\Framework\Registry
      */
-    protected $_coreRegistry = null;
+    protected $coreRegistry = null;
 
     /**
      * @param \Magento\Backend\Block\Widget\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param array $data
+     * @param \Magento\Framework\Registry           $registry
+     * @param array                                 $data
      */
-    public function __construct(\Magento\Backend\Block\Widget\Context $context, \Magento\Framework\Registry $registry, array $data = [])
-    {
-        $this->_coreRegistry = $registry;
+    public function __construct(
+        \Magento\Backend\Block\Widget\Context $context,
+        \Magento\Framework\Registry $registry,
+        array $data = []
+    ) {
+        $this->coreRegistry = $registry;
         parent::__construct($context, $data);
     }
 

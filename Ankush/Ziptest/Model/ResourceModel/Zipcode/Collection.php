@@ -1,8 +1,18 @@
 <?php
+/**
+ * Copyright
+ *
+ * @category Ankush
+ * @package  Ankush_Ziptest
+ */
 
 namespace Ankush\Ziptest\Model\ResourceModel\Zipcode;
 
-class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
+/**
+ * Zipcode Collection Class
+ */
+class Collection extends
+    \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
     /**
      * @var string
@@ -19,11 +29,15 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
     /**
      * Define resource model
+     *
      * @return void
      */
     protected function _construct()
     {
-        $this->_init('Ankush\Ziptest\Model\Zipcode', 'Ankush\Ziptest\Model\ResourceModel\Zipcode');
+        $this->_init(
+            'Ankush\Ziptest\Model\Zipcode',
+            'Ankush\Ziptest\Model\ResourceModel\Zipcode'
+        );
 
     }
 }
