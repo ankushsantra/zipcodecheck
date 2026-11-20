@@ -1,6 +1,6 @@
 {
-    "name": "ankush/ziptest",
-    "description": "Ankush Ziptest Module",
+    "name": "ankush/zipcodecheck",
+    "description": "Ankush ZipCode Check Module",
     "type": "magento2-module",
     "version": "1.0.0",
     "license": [
